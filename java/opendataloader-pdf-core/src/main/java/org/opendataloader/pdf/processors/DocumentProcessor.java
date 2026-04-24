@@ -226,7 +226,7 @@ public class DocumentProcessor {
             pageArtifacts[i] = document.getArtifacts(i);
         }
 
-        int parallelism = Runtime.getRuntime().availableProcessors();
+        int parallelism = config.getThreads();
         ForkJoinPool pool = new ForkJoinPool(parallelism);
         LOGGER.log(Level.INFO, "Processing {0} pages with {1} threads", new Object[]{totalPages, parallelism});
 
